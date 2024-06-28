@@ -29,6 +29,8 @@ def adam_stochastic_gradient_descent(data,data_output,bias,weights,batch_size,al
     for j in range(MAX_ITERS):
         if j % 100 == 0:
             print(j)
+
+        if j % 1000 == 0:
             loss = 0
             for xo,yo in zip(data,data_output):
                 loss += multiclass_loss(np.reshape(xo,(xo.shape[0],1)),yo,bias,weights)
